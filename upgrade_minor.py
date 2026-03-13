@@ -25,7 +25,7 @@ def run_cmd(cmd):
 def getCurrentVersion(dir):
     file = os.path.join(dir, "wp-includes/version.php")
     with open(file, encoding="utf-8") as f:
-        versions = re.findall("\$wp_version = '([\d\.]+)'", f.read())
+        versions = re.findall(r"\$wp_version = '([\d\.]+)'", f.read())
         if len(versions) > 0:
             return versions[0]
 
@@ -68,7 +68,7 @@ def toMajorVersion(curVersion):
 
 def getLatestMinorRelease(curVersion):
     for tag in getLatestReleases():
-        m = re.match(b'^\d+[\d.]*', tag[0].encode("utf-8"))
+        m = re.match(br'^\d+[\d.]*', tag[0].encode("utf-8"))
         if m is None:
             continue
         if Version(tag[0]) > Version(curVersion):
