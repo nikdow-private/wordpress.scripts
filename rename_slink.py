@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+#
+# change slink to wp-composer in /wp-content/plugins
+#
+
 import os
 import re
 from pathlib import Path
