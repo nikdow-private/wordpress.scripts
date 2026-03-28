@@ -36,8 +36,6 @@ def update_symlinks(directory, old_p, new_p):
                         print("Update successful.")
                     except OSError as e:
                         print(f"Error updating link {full_path}: {e}")
-            break
-        break
 
 if __name__ == "__main__":
     update_symlinks(search_dir, old_pattern, new_pattern)
