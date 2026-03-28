@@ -9,11 +9,8 @@ from pathlib import Path
 
 # Configuration
 search_dir = Path(".")
-old_pattern = "/old/path"
-new_pattern = "/new/path"
 
-
-def update_symlinks(directory, old_p, new_p):
+def update_symlinks(directory):
     """Recursively finds and updates symbolic links."""
     for root, dirs, files in os.walk(directory):
         for name in files + dirs:
@@ -38,6 +35,6 @@ def update_symlinks(directory, old_p, new_p):
                         print(f"Error updating link {full_path}: {e}")
 
 if __name__ == "__main__":
-    update_symlinks(search_dir, old_pattern, new_pattern)
+    update_symlinks(search_dir)
     print("Symbolic link modification complete.")
 
