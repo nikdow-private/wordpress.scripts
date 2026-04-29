@@ -7,6 +7,7 @@ from packaging.version import Version
 from abc import ABC, abstractmethod
 from bs4 import BeautifulSoup
 
+# Obsolete, see crontab cd /home/lamp/wordpress && su composer -c "composer update"
 
 PLUGIN_DIR = "/home/lamp/wordpress/plugins"
 THEME_DIR = "/home/lamp/wordpress/themes"
