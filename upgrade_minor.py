@@ -44,6 +44,7 @@ def getLatestReleases():
     conn = http.client.HTTPSConnection("wordpress.org", 443)
     conn.request("GET", "/download/releases/")
     html_doc = conn.getresponse().read().decode("utf-8")
+    print(html_doc)
     soup = BeautifulSoup(html_doc, 'html.parser')
 
     for table in soup.find_all('div', id='latest'):
